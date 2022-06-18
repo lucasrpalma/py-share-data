@@ -1,4 +1,6 @@
 import mysql.connector
+from mysql.connector import errorcode
+import sql.tables
 
 # Hardcoded DB credentials, in production use Vault or some other service
 db_user = "root"
@@ -23,6 +25,16 @@ def init():
         database="storage"
     )
     cursor = mydb.cursor()
-    cursor.execute("DROP TABLE IF EXISTS users")
-    cursor.execute("CREATE TABLE users (id INT, login VARCHAR(255), role VARCHAR(255), password VARCHAR(255))")
+    for table_name in sql.tables.TABLES:
+        table_description = sql.tables.TABLES[table_name]
+        try:
+            print("Creating table {}: ".format(table_name), end='')
+            cursor.execute(table_description)
+        except mysql.connector.Error as err:
+            if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
+                print("already exists.")
+            else:
+                print(err.msg)
+        else:
+            print("OK")
     cursor.close()
