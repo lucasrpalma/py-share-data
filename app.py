@@ -1,17 +1,15 @@
 import db
-import json
 from flask import Flask
 
 app = Flask(__name__)
 
+@app.before_first_request
+def init():
+  db.init()
+
 @app.route('/')
 def default():
-    return 'PING'
-
-@app.route('/initdb')
-def db_init():
-  db.init()
-  return 'init database'
+    return 'It works!'
 
 if __name__ == "__main__":
   app.run(host ='0.0.0.0')
