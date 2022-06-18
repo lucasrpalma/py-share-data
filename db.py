@@ -1,16 +1,19 @@
+''' Database related functions '''
+
 import mysql.connector
 from mysql.connector import errorcode
 import sql.tables
 
 # Hardcoded DB credentials, in production use Vault or some other service
-db_user = "root"
-db_password="@Py1234@"
+DB_USER = "root"
+DB_PASSWORD="@Py1234@"
 
-def create_database():
+def init_db():
+    ''' Create the storage database '''
     mydb = mysql.connector.connect(
         host="mysqldb",
-        user=db_user,
-        password=db_password
+        user=DB_USER,
+        password=DB_PASSWORD
     )
     cursor = mydb.cursor()
 
@@ -18,19 +21,19 @@ def create_database():
     cursor.execute("CREATE DATABASE storage")
     cursor.close()
 
-def create_tables():
+def init_tables():
+    ''' Create the default tables '''
     mydb = mysql.connector.connect(
         host="mysqldb",
-        user=db_user,
-        password=db_password,
+        user=DB_USER,
+        password=DB_PASSWORD,
         database="storage"
     )
     cursor = mydb.cursor()
-    for table_name in sql.tables.TABLES:
-        table_description = sql.tables.TABLES[table_name]
+    for key, value in sql.tables.TABLES.items():
         try:
-            print("Creating table {}: ".format(table_name), end='')
-            cursor.execute(table_description)
+            print(f"Creating table {key}: ", end='')
+            cursor.execute(value)
         except mysql.connector.Error as err:
             if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
                 print("already exists.")
@@ -41,5 +44,6 @@ def create_tables():
     cursor.close()
 
 def init():
-    create_database()
-    create_tables()
+    ''' Initilization function for the DB '''
+    init_db()
+    init_tables()
