@@ -6,7 +6,7 @@ import sql.tables
 db_user = "root"
 db_password="@Py1234@"
 
-def init():
+def create_database():
     mydb = mysql.connector.connect(
         host="mysqldb",
         user=db_user,
@@ -18,6 +18,7 @@ def init():
     cursor.execute("CREATE DATABASE storage")
     cursor.close()
 
+def create_tables():
     mydb = mysql.connector.connect(
         host="mysqldb",
         user=db_user,
@@ -38,3 +39,7 @@ def init():
         else:
             print("OK")
     cursor.close()
+
+def init():
+    create_database()
+    create_tables()
