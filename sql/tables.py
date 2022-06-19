@@ -2,6 +2,7 @@
 
 TABLES = {}
 
+# ID without AUTO INCREMENT for this exercise purpose
 TABLES['USERS'] = (
     """
     CREATE TABLE `users` (
@@ -9,7 +10,8 @@ TABLES['USERS'] = (
         `username` VARCHAR(255) NOT NULL,
         `role` VARCHAR(255) NOT NULL,
         `password` VARCHAR(255) NOT NULL,
-        PRIMARY KEY (ID)
+        PRIMARY KEY (ID),
+        UNIQUE (username)
         )
     """
 )

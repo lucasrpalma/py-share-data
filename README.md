@@ -42,7 +42,9 @@ This decision was made to make it easier to debug directly on the terminal conso
 - More user management features, as:
   - User registration
   - Password recovery
+  - Change password
   - MFA
+  - Check for weak password
 - Feature against brute force, as:
   - Block the user and/or the IP after a few tries
   - Throttling on the requests
@@ -51,3 +53,6 @@ This decision was made to make it easier to debug directly on the terminal conso
 - Better logging (including using **logging** instead of **print**)
 - Docker image hardening
 - External secrets service usage instead of hardcoded passwords
+- Check for long inputs trying to make a DoS
+- Better testing against concurrency issues
+- Better error handling
