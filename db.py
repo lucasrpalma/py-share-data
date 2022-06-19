@@ -1,6 +1,4 @@
 ''' Database related functions '''
-
-from multiprocessing.spawn import prepare
 import mysql.connector
 from mysql.connector import errorcode
 import sql.tables

@@ -13,6 +13,7 @@ def init():
 @app.route('/')
 def default():
     ''' Healthcheck '''
+    print('Healthcheck request made by unknown user')
     return 'It works!'
 
 if __name__ == "__main__":

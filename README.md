@@ -27,5 +27,6 @@ After the initialization, you can perform a **GET** operation on **localhost** a
 - Throttling on the requests (and firewall controls overall)
 - Requests through WAF
 - CI/CD with SAST, SCA, DAST and other security controls
-- Better logging
+- Better logging (including using **logging** instead of **print**)
 - Docker image hardening
+- External secrets service usage instead of hardcoded passwords
