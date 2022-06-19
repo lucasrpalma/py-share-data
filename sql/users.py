@@ -1,4 +1,4 @@
-''' Module with the users needed for this exercise '''
+''' Module for managing users with the DB '''
 import sys
 sys.path.append('../libs')
 from libs import crypto

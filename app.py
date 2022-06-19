@@ -30,7 +30,9 @@ def login():
                 result = auth.login(username, password)
                 if result in (403, 404):
                     return Response("{'Error':'Invalid username or password'}", status=403, mimetype='application/json')
-                return Response('', status=200, mimetype='application/json')
+                elif result is 503:
+                    return Response("{'Error':'Server error while generating the token'}", status=503, mimetype='application/json')
+                return Response("{'token':'" + result + "'}", status=200, mimetype='application/json')
             else:
                 return Response("{'Error':'Missing password parameter'}", status=422, mimetype='application/json')
         else:

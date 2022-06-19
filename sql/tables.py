@@ -15,3 +15,15 @@ TABLES['USERS'] = (
         )
     """
 )
+
+TABLES['TOKENS'] = (
+    """
+    CREATE TABLE `tokens` (
+        `ID` INT NOT NULL AUTO_INCREMENT,
+        `token` VARCHAR(255) NOT NULL,
+        `role` VARCHAR(255) NOT NULL,
+        PRIMARY KEY (ID),
+        UNIQUE (token)
+        )
+    """
+)

@@ -1,8 +1,7 @@
 ''' Database related functions '''
 import mysql.connector
 from mysql.connector import errorcode
-import sql.tables
-import sql.users
+from sql import tables, users, tokens
 
 # Hardcoded DB credentials, in production use Vault or some other service
 DB_USER = "root"
@@ -33,7 +32,7 @@ def __init_tables():
         database=DB_NAME
     )
     cursor = mydb.cursor()
-    for key, value in sql.tables.TABLES.items():
+    for key, value in tables.TABLES.items():
         try:
             print(f"Creating table {key}: ", end='')
             cursor.execute(value)
@@ -56,10 +55,10 @@ def __init_users():
         database=DB_NAME
     )
     cursor = mydb.cursor()
-    for key, value in sql.users.USERS.items():
+    for key, value in users.USERS.items():
         try:
             print(f"Inserting user {key}: ", end='')
-            cursor.execute(sql.users.ADD_USER, value)
+            cursor.execute(users.ADD_USER, value)
         except mysql.connector.Error as err:
             print('Error: ' + err.msg)
         else:
@@ -85,7 +84,7 @@ def get_user_id(username):
     cursor = mydb.cursor()
     try:
         print(f"Querying user {username} ID: ", end='')
-        cursor.execute(sql.users.GET_USER_ID, (username,))
+        cursor.execute(users.GET_USER_ID, (username,))
         result = cursor.fetchone()
         user_id = None
         if result is None:
@@ -112,7 +111,7 @@ def get_user_role(id, password):
     role = None
     try:
         print(f"Querying role from user [ID {id}]: ", end='')
-        cursor.execute(sql.users.GET_USER_ROLE, (id, password))
+        cursor.execute(users.GET_USER_ROLE, (id, password))
         result = cursor.fetchone()
         if result is None:
             print('Error: Wrong password.')
@@ -124,3 +123,26 @@ def get_user_role(id, password):
     except mysql.connector.Error as err:
         print('Error: ' + err.msg)
     return role
+
+def insert_new_token(token, role):
+    ''' Insert a new token to access the application '''
+    mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+    cursor = mydb.cursor()
+    result = False
+    try:
+        print(f"Inserting new token with role {role}: ", end='')
+        cursor.execute(tokens.ADD_TOKEN, (token, role))
+        mydb.commit()
+        result = True
+    except mysql.connector.Error as err:
+        print('Error: ' + err.msg)
+    else:
+        print("OK")
+    cursor.close()
+    mydb.close()
+    return result
