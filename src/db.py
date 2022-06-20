@@ -172,3 +172,28 @@ def insert_new_consumer_list(consumer):
         print("Consumers from Mock added to the DB")
         cursor.close()
         mydb.close()
+
+def get_role_from_token(token):
+    ''' Query to get the role from a given token, if the token exists '''
+    mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+    cursor = mydb.cursor()
+    role = None
+    try:
+        print(f"Querying role from a token: ", end='')
+        cursor.execute(tokens.GET_TOKEN, (token))
+        result = cursor.fetchone()
+        if result is None:
+            print("Error: Token doesn't exist.")
+        else:
+            role = result[0]
+            print(role)
+        cursor.close()
+        mydb.close()
+    except mysql.connector.Error as err:
+        print('Error: ' + err.msg)
+    return role

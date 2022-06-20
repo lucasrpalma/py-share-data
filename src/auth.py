@@ -17,7 +17,9 @@ def login(login, password):
             if(db.insert_new_token(new_uuid, user_role)):
                 return new_uuid
             return 503
-        else:
-            return 403
-    else:
-        return 404
+        return 403
+    return 404
+
+def get_role_from_token(token):
+    ''' Get role from a given token '''
+    
