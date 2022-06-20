@@ -1,7 +1,7 @@
 ''' Database related functions '''
 import mysql.connector
 from mysql.connector import errorcode
-from sql import tables, users, tokens
+from sql import tables, users, tokens, consumers
 
 # Hardcoded DB credentials, in production use Vault or some other service
 DB_USER = "root"
@@ -146,3 +146,30 @@ def insert_new_token(token, role):
     cursor.close()
     mydb.close()
     return result
+
+def insert_new_consumer_list(consumer):
+    ''' Insert a new consumer list on the DB '''
+    mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+    cursor = mydb.cursor()
+    print("Beggining to insert the consumers from the mock to the DB")
+    try:
+        for consumer_user in consumer:
+            cursor.execute(consumers.ADD_CONSUMER, (consumer_user.ID, consumer_user.register_date,
+            consumer_user.username, consumer_user.zip_code, consumer_user.credit_card,
+            consumer_user.account_number, consumer_user.address, consumer_user.latitude,
+            consumer_user.longitude, consumer_user.fav_color, consumer_user.doc_photo,
+            consumer_user.ip_addr, consumer_user.car, consumer_user.car_model,
+            consumer_user.car_type, consumer_user.car_color, consumer_user.purchases_number,
+            consumer_user.avatar, consumer_user.birthday))
+            mydb.commit()
+    except mysql.connector.Error as err:
+        print('Error on inserting the consumers: ' + err.msg)
+    else:
+        print("Consumers added")
+        cursor.close()
+        mydb.close()

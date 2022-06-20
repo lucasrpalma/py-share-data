@@ -2,16 +2,16 @@
 import json
 import requests
 from consumer import Consumer
+import db
 
 def get_external_data():
     ''' Function to get the data from the Mock server '''
     url = 'https://62433a7fd126926d0c5d296b.mockapi.io/api/v1/usuarios'
     get_data = requests.get(url)
-    if get_data.status_code is 200:
+    if get_data.status_code == 200:
         data = get_data.json()
         consumers_list = []
         for consumer_data in data:
-            # ip_addr, car, car_model, car_type, car_color, purchases_number, avatar, birthday
             consumers_list.append(
                 Consumer(consumer_data["id"],
                         consumer_data["fec_alta"],
@@ -33,5 +33,6 @@ def get_external_data():
                         consumer_data["avatar"],
                         consumer_data["fec_birthday"]
             ))
+        db.insert_new_consumer_list(consumers_list)
     else:
         print('Error getting data from mock server')
