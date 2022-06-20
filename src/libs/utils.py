@@ -38,7 +38,7 @@ def get_consumer(consumer, role):
     json_result = json.dumps(consumer_dict)
     return json_result
 
-def get_consumer_from_db(type, param):
+def get_consumer_from_db(type, param, role):
     ''' Handling the DB data and returning to the server '''
     if type == "ID":
         consumer = get_consumer_by_id(param)
@@ -53,6 +53,6 @@ def get_consumer_from_db(type, param):
     consumer_from_db = get_consumer(Consumer(consumer[0], consumer[1], consumer[2], consumer[3], consumer[4],
                                 consumer[5], consumer[6], consumer[7], consumer[8], consumer[9],
                                 consumer[10], consumer[11], consumer[12], consumer[13], consumer[14],
-                                consumer[15], consumer[16], consumer[17], consumer[18]), ROLES['ADMIN'])
+                                consumer[15], consumer[16], consumer[17], consumer[18]), role)
 
     return consumer_from_db

@@ -46,14 +46,20 @@ def login():
 @app.route('/consumer', methods = ['GET'])
 def search():
     ''' GET request to obtain a consumer from the DB '''
+    token = request.headers.get('token')
+    role = auth.get_role_from_token(token)
+
+    if role == 403:
+        return Response("{'Error':'Invalid authentication token'}", status=403, mimetype='application/json')
+
     consumer_id = request.args.get('id')
     consumer_username = request.args.get('username')
     consumer = None
 
     if consumer_id is not None:
-        consumer = get_consumer_from_db("ID", consumer_id)
+        consumer = get_consumer_from_db("ID", consumer_id, role)
     elif consumer_username is not None:
-        consumer = get_consumer_from_db("username", consumer_username)
+        consumer = get_consumer_from_db("username", consumer_username, role)
 
     if consumer == 404:
         return Response("{'Error':'Consumer not found'}", status=404, mimetype='application/json')
