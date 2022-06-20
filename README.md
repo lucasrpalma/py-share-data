@@ -38,7 +38,9 @@ This decision was made to make it easier to debug directly on the terminal conso
 
 ## Improvements needed
 - TLS
-- Strong authentication protocol implementation (like OAUTH2)
+- Better authentication, as:
+  - Strong authentication protocol implementation (like OAUTH2)
+  - Better token management (incuding expiration)
 - More user management features, as:
   - User registration
   - Password recovery

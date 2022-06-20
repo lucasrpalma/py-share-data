@@ -3,6 +3,7 @@
 from flask import Flask, request, Response, json
 import db
 import auth
+import externalcontent
 
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ app = Flask(__name__)
 def init():
     ''' Create the DB with tables and default data '''
     db.init()
+    externalcontent.get_external_data()
 
 @app.route('/', methods = ['GET'])
 def default():
