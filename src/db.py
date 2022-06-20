@@ -185,7 +185,7 @@ def get_role_from_token(token):
     role = None
     try:
         print(f"Querying role from a token: ", end='')
-        cursor.execute(tokens.GET_TOKEN, (token))
+        cursor.execute(tokens.GET_TOKEN, (token,))
         result = cursor.fetchone()
         if result is None:
             print("Error: Token doesn't exist.")
@@ -197,3 +197,53 @@ def get_role_from_token(token):
     except mysql.connector.Error as err:
         print('Error: ' + err.msg)
     return role
+
+def get_consumer_by_id(consumer_id):
+    ''' Query to get the consumer from a given ID, if the ID exists '''
+    mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+    cursor = mydb.cursor()
+    consumer = None
+    try:
+        print("Querying consumer by ID")
+        cursor.execute(consumers.GET_CONSUMER_BY_ID, (consumer_id,))
+        result = cursor.fetchall()
+        if result is None:
+            print("Error: Consumer doesn't exist.")
+        else:
+            consumer = result[0]
+            print("ID: " + consumer_id)
+        cursor.close()
+        mydb.close()
+    except mysql.connector.Error as err:
+        print('Error: ' + err.msg)
+    return consumer
+
+def get_consumer_by_username(username):
+    ''' Query to get the consumer from a given username, if the username exists '''
+    mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+    cursor = mydb.cursor()
+    consumer = None
+    try:
+        print("Querying consumer by username")
+        cursor.execute(consumers.GET_CONSUMER_BY_USERNAME, (username,))
+        result = cursor.fetchall()
+        if result is None:
+            print("Error: Consumer doesn't exist.")
+        else:
+            consumer = result[0]
+            print("Username " + username)
+        cursor.close()
+        mydb.close()
+    except mysql.connector.Error as err:
+        print('Error: ' + err.msg)
+    return consumer

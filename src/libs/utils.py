@@ -3,6 +3,9 @@ import json
 import sys
 sys.path.append('../sql')
 from sql.users import ROLES
+sys.path.append('..')
+from db import get_consumer_by_id, get_consumer_by_username
+from consumer import Consumer
 
 
 def get_consumer(consumer, role):
@@ -34,3 +37,22 @@ def get_consumer(consumer, role):
         consumer_dict["cuenta_numero"] = consumer.account_number
     json_result = json.dumps(consumer_dict)
     return json_result
+
+def get_consumer_from_db(type, param):
+    ''' Handling the DB data and returning to the server '''
+    if type == "ID":
+        consumer = get_consumer_by_id(param)
+    elif type == "username":
+        consumer = get_consumer_by_username(param)
+    else:
+        return 422
+
+    if consumer is None:
+        return 404
+    
+    consumer_from_db = get_consumer(Consumer(consumer[0], consumer[1], consumer[2], consumer[3], consumer[4],
+                                consumer[5], consumer[6], consumer[7], consumer[8], consumer[9],
+                                consumer[10], consumer[11], consumer[12], consumer[13], consumer[14],
+                                consumer[15], consumer[16], consumer[17], consumer[18]), ROLES['ADMIN'])
+
+    return consumer_from_db
