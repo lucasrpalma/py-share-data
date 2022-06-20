@@ -156,7 +156,6 @@ def insert_new_consumer_list(consumer):
         database=DB_NAME
     )
     cursor = mydb.cursor()
-    print("Beggining to insert the consumers from the mock to the DB")
     try:
         for consumer_user in consumer:
             cursor.execute(consumers.ADD_CONSUMER, (consumer_user.ID, consumer_user.register_date,
@@ -168,8 +167,83 @@ def insert_new_consumer_list(consumer):
             consumer_user.avatar, consumer_user.birthday))
             mydb.commit()
     except mysql.connector.Error as err:
-        print('Error on inserting the consumers: ' + err.msg)
+        print('Error on inserting the consumers on the DB: ' + err.msg)
     else:
-        print("Consumers added")
+        print("Consumers from Mock added to the DB")
         cursor.close()
         mydb.close()
+
+def get_role_from_token(token):
+    ''' Query to get the role from a given token, if the token exists '''
+    mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+    cursor = mydb.cursor()
+    role = None
+    try:
+        print(f"Querying role from a token: ", end='')
+        cursor.execute(tokens.GET_TOKEN, (token,))
+        result = cursor.fetchone()
+        if result is None:
+            print("Error: Token doesn't exist.")
+        else:
+            role = result[0]
+            print(role)
+        cursor.close()
+        mydb.close()
+    except mysql.connector.Error as err:
+        print('Error: ' + err.msg)
+    return role
+
+def get_consumer_by_id(consumer_id):
+    ''' Query to get the consumer from a given ID, if the ID exists '''
+    mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+    cursor = mydb.cursor()
+    consumer = None
+    try:
+        print("Querying consumer by ID")
+        cursor.execute(consumers.GET_CONSUMER_BY_ID, (consumer_id,))
+        result = cursor.fetchall()
+        if result is None:
+            print("Error: Consumer doesn't exist.")
+        else:
+            consumer = result[0]
+            print("ID: " + consumer_id)
+        cursor.close()
+        mydb.close()
+    except mysql.connector.Error as err:
+        print('Error: ' + err.msg)
+    return consumer
+
+def get_consumer_by_username(username):
+    ''' Query to get the consumer from a given username, if the username exists '''
+    mydb = mysql.connector.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
+    )
+    cursor = mydb.cursor()
+    consumer = None
+    try:
+        print("Querying consumer by username")
+        cursor.execute(consumers.GET_CONSUMER_BY_USERNAME, (username,))
+        result = cursor.fetchall()
+        if result is None:
+            print("Error: Consumer doesn't exist.")
+        else:
+            consumer = result[0]
+            print("Username " + username)
+        cursor.close()
+        mydb.close()
+    except mysql.connector.Error as err:
+        print('Error: ' + err.msg)
+    return consumer
