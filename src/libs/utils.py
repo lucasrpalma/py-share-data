@@ -35,8 +35,23 @@ def get_consumer(consumer, role):
     if role in (ROLES['ADMIN'], ROLES['FINANCE']):
         consumer_dict["credit_card_num"] = consumer.credit_card
         consumer_dict["cuenta_numero"] = consumer.account_number
+    else:
+        # Masking credit card for non financial users
+        consumer_dict["credit_card_num"] = __mask_credit_card(consumer.credit_card)
+        # Masking the account number for non financial users
+        consumer_dict["cuenta_numero"] = consumer.account_number[:2] + '*' * 4 + consumer.account_number[-2:]
     json_result = json.dumps(consumer_dict)
     return json_result
+
+def __mask_credit_card(credit_card):
+    # First 6 digits, to identify the issuer
+    masked_credit_card = credit_card[:7]
+    # Masking the middle numbers, to not identify the whole number
+    masked_credit_card += '**-****-'
+    # Last 4 digits, to identify the holder but not the card
+    masked_credit_card += credit_card[-4:]
+    return masked_credit_card
+
 
 def get_consumer_from_db(type, param, role):
     ''' Handling the DB data and returning to the server '''
