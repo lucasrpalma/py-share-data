@@ -156,7 +156,6 @@ def insert_new_consumer_list(consumer):
         database=DB_NAME
     )
     cursor = mydb.cursor()
-    print("Beggining to insert the consumers from the mock to the DB")
     try:
         for consumer_user in consumer:
             cursor.execute(consumers.ADD_CONSUMER, (consumer_user.ID, consumer_user.register_date,
@@ -168,8 +167,8 @@ def insert_new_consumer_list(consumer):
             consumer_user.avatar, consumer_user.birthday))
             mydb.commit()
     except mysql.connector.Error as err:
-        print('Error on inserting the consumers: ' + err.msg)
+        print('Error on inserting the consumers on the DB: ' + err.msg)
     else:
-        print("Consumers added")
+        print("Consumers from Mock added to the DB")
         cursor.close()
         mydb.close()

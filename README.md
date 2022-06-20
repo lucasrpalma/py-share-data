@@ -41,6 +41,7 @@ This decision was made to make it easier to debug directly on the terminal conso
 - Better authentication, as:
   - Strong authentication protocol implementation (like OAUTH2)
   - Better token management (incuding expiration)
+  - Better cryptographic algorithms (maybe PBKDF2 instead of SHA512)
 - More user management features, as:
   - User registration
   - Password recovery
@@ -58,3 +59,4 @@ This decision was made to make it easier to debug directly on the terminal conso
 - Check for long inputs trying to make a DoS
 - Better testing against concurrency issues
 - Better error handling
+- Unit and integrations tests
