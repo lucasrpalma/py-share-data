@@ -22,4 +22,7 @@ def login(login, password):
 
 def get_role_from_token(token):
     ''' Get role from a given token '''
-    
+    role = db.get_role_from_token(token)
+    if role is not None:
+        return role
+    return 403
