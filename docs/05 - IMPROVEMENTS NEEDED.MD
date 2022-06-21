@@ -1,0 +1,24 @@
+# Improvements needed
+- TLS
+- Better authentication, as:
+  - Strong authentication protocol implementation (like OAUTH2)
+  - Better token management (incuding expiration)
+  - Better cryptographic algorithms (maybe PBKDF2 instead of SHA512)
+- More user management features, as:
+  - User registration
+  - Password recovery
+  - Change password
+  - MFA
+  - Check for weak password
+- Feature against brute force, as:
+  - Block the user and/or the IP after a few tries
+  - Throttling on the requests
+- Requests through WAF and firewall overall
+- CI/CD with SAST, SCA, DAST and other security controls
+- Better logging (including using **logging** instead of **print**)
+- Docker image hardening
+- External secrets service usage instead of hardcoded passwords
+- Check for long inputs trying to make a DoS
+- Better testing against concurrency issues
+- Better error handling
+- Unit and integrations tests
