@@ -1,5 +1,8 @@
 # Improvements needed
-- TLS
+The exercise was made considering solely the scope of data sharing differently according to the role.
+
+For a much stronger security overall, it would need a lot more security controls and quality checks, as for example:
+- Communication over TLS protocol
 - Better authentication, as:
   - Strong authentication protocol implementation (like OAUTH2)
   - Better token management (incuding expiration)
@@ -10,11 +13,11 @@
   - Change password
   - MFA
   - Check for weak password
-- Feature against brute force, as:
+- Protection against brute force, as:
   - Block the user and/or the IP after a few tries
   - Throttling on the requests
-- Requests through WAF and firewall overall
-- CI/CD with SAST, SCA, DAST and other security controls
+- Requests through Firewall and WAF
+- CI/CD with SAST, SCA, DAST and other security tools
 - Better logging (including using **logging** instead of **print**)
 - Docker image hardening
 - External secrets service usage instead of hardcoded passwords
