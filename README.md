@@ -9,3 +9,4 @@ It uses **Docker + Python/Flash + MySQL** stack.
 3. [Tutorial](docs/03%20-%20TUTORIAL.md)
 4. [Features](docs/04%20-%20FEATURES.md)
 5. [Improvements needed](docs/05%20-%20IMPROVEMENTS%20NEEDED.MD)
+6. [Application description](docs/06%20-%20APPLICATION%20DESCRIPTION.MD)
