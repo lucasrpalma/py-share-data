@@ -25,3 +25,5 @@ For a much stronger security overall, it would need a lot more security controls
 - Better testing against concurrency issues
 - Better error handling
 - Unit and integrations tests
+
+More regarding improvements and risks can be seen on the [Risk Register](Risk%20Register.xlsx).
