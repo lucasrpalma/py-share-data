@@ -17,6 +17,7 @@ A few documents so you can better understand the application.
 4. [Features](docs/04%20-%20FEATURES.md)
 5. [Improvements needed](docs/05%20-%20IMPROVEMENTS%20NEEDED.MD)
 6. [Application description](docs/06%20-%20APPLICATION%20DESCRIPTION.MD)
+7. [Risk Register](docs/Risk%20Register.xlsx)
 
 ## Few drawbacks
 
