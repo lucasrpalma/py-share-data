@@ -1,0 +1,652 @@
+{
+	"version": 1,
+	"collections": [
+		{
+			"id": "488fb9b4-f79e-4a85-8e00-6840add75376",
+			"uid": "0-488fb9b4-f79e-4a85-8e00-6840add75376",
+			"name": "Py Share Data",
+			"description": null,
+			"auth": null,
+			"events": null,
+			"variables": [],
+			"order": [],
+			"folders_order": [
+				"d487fb2f-43f9-40a8-b7b5-69a01b4f6214",
+				"a4a3549c-7301-448b-bc4c-40f330da409c",
+				"165a06b2-80da-4217-9990-85bfdaa02cb2",
+				"3dc63c51-463a-48b7-a755-4686e9067a63",
+				"e4a1491a-902c-4002-83f0-4436ff042082"
+			],
+			"protocolProfileBehavior": {},
+			"createdAt": "2022-06-19T18:16:05.383Z",
+			"folders": [
+				{
+					"id": "a4a3549c-7301-448b-bc4c-40f330da409c",
+					"uid": "0-a4a3549c-7301-448b-bc4c-40f330da409c",
+					"name": "Admin",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folder": null,
+					"order": [
+						"6214fad6-7e29-4cd4-a185-e1adf894df95",
+						"57312e02-5393-4cbf-aad1-015b33338dcd",
+						"b10e389d-515c-405a-823f-3d2d3ec49299"
+					],
+					"folders_order": [],
+					"owner": "0",
+					"protocolProfileBehavior": {},
+					"createdAt": "2022-06-19T18:18:03.906Z",
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folderId": "a4a3549c-7301-448b-bc4c-40f330da409c"
+				},
+				{
+					"id": "3dc63c51-463a-48b7-a755-4686e9067a63",
+					"uid": "0-3dc63c51-463a-48b7-a755-4686e9067a63",
+					"name": "Finance",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folder": null,
+					"order": [
+						"75eb2f70-62fe-4ea0-995c-e6a779ecd08d",
+						"8d56ccbf-b780-4159-9ea7-295b3f53a884",
+						"11c9d479-9fe5-4621-9d89-e41b8abc8a6c"
+					],
+					"folders_order": [],
+					"owner": "0",
+					"protocolProfileBehavior": {},
+					"createdAt": "2022-06-19T19:21:23.068Z",
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folderId": "3dc63c51-463a-48b7-a755-4686e9067a63"
+				},
+				{
+					"id": "d487fb2f-43f9-40a8-b7b5-69a01b4f6214",
+					"uid": "0-d487fb2f-43f9-40a8-b7b5-69a01b4f6214",
+					"name": "Healthcheck",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folder": null,
+					"order": [
+						"014f07e8-b583-493f-908f-cdd90288ba95"
+					],
+					"folders_order": [],
+					"owner": "0",
+					"protocolProfileBehavior": {},
+					"createdAt": "2022-06-21T17:00:01.804Z",
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folderId": "d487fb2f-43f9-40a8-b7b5-69a01b4f6214"
+				},
+				{
+					"id": "165a06b2-80da-4217-9990-85bfdaa02cb2",
+					"uid": "0-165a06b2-80da-4217-9990-85bfdaa02cb2",
+					"name": "Privacy",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folder": null,
+					"order": [
+						"e62f52fd-6114-483d-9433-547cb4d1b353",
+						"648408ba-c2c0-4300-bcf1-94a87ecf8655",
+						"7e8a068d-9125-4dd8-8eff-9ed54733e53c"
+					],
+					"folders_order": [],
+					"owner": "0",
+					"protocolProfileBehavior": {},
+					"createdAt": "2022-06-19T19:20:46.585Z",
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folderId": "165a06b2-80da-4217-9990-85bfdaa02cb2"
+				},
+				{
+					"id": "e4a1491a-902c-4002-83f0-4436ff042082",
+					"uid": "0-e4a1491a-902c-4002-83f0-4436ff042082",
+					"name": "Regular",
+					"description": null,
+					"auth": null,
+					"events": null,
+					"collection": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folder": null,
+					"order": [
+						"ceca119c-2e04-4927-bb08-cae171b50ff7",
+						"be382797-b521-4770-855e-1eef3b1ac79c",
+						"219b86f3-7aa0-4513-8acb-98f8d8f6734f"
+					],
+					"folders_order": [],
+					"owner": "0",
+					"protocolProfileBehavior": {},
+					"createdAt": "2022-06-19T19:21:50.545Z",
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"folderId": "e4a1491a-902c-4002-83f0-4436ff042082"
+				}
+			],
+			"requests": [
+				{
+					"id": "014f07e8-b583-493f-908f-cdd90288ba95",
+					"uid": "0-014f07e8-b583-493f-908f-cdd90288ba95",
+					"name": "Healthcheck",
+					"url": "http://localhost:8000/",
+					"description": null,
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": null,
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": null,
+					"folder": "d487fb2f-43f9-40a8-b7b5-69a01b4f6214",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"pathVariables": {}
+				},
+				{
+					"id": "11c9d479-9fe5-4621-9d89-e41b8abc8a6c",
+					"uid": "0-11c9d479-9fe5-4621-9d89-e41b8abc8a6c",
+					"name": "Search Consumer by Username with Finance token",
+					"url": "http://localhost:8000/consumer?username=Ethelyn.Schinner",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "token",
+							"value": "{{financeToken}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "username",
+							"value": "Ethelyn.Schinner",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": "3dc63c51-463a-48b7-a755-4686e9067a63",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"headers": "token: {{financeToken}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "219b86f3-7aa0-4513-8acb-98f8d8f6734f",
+					"uid": "0-219b86f3-7aa0-4513-8acb-98f8d8f6734f",
+					"name": "Search Consumer by Username with Common token",
+					"url": "http://localhost:8000/consumer?username=Ethelyn.Schinner",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "token",
+							"value": "{{commonToken}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "username",
+							"value": "Ethelyn.Schinner",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": "e4a1491a-902c-4002-83f0-4436ff042082",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"headers": "token: {{commonToken}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "57312e02-5393-4cbf-aad1-015b33338dcd",
+					"uid": "0-57312e02-5393-4cbf-aad1-015b33338dcd",
+					"name": "Search Consumer by ID with Admin token",
+					"url": "http://localhost:8000/consumer?id=2",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "token",
+							"value": "{{adminToken}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "id",
+							"value": "2",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": "a4a3549c-7301-448b-bc4c-40f330da409c",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"headers": "token: {{adminToken}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "6214fad6-7e29-4cd4-a185-e1adf894df95",
+					"uid": "0-6214fad6-7e29-4cd4-a185-e1adf894df95",
+					"name": "Login with SuperUser Role",
+					"url": "http://localhost:8000/login",
+					"description": "",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64b64952-8292-4297-9c55-492807768fb3",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"adminToken\", jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "a4a3549c-7301-448b-bc4c-40f330da409c",
+					"responses_order": [],
+					"preRequestScript": null,
+					"tests": "var jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"adminToken\", jsonData.token)",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"rawModeData": "{\n    \"username\": \"admin\",\n    \"password\": \"admin123\"\n}",
+					"pathVariables": {}
+				},
+				{
+					"id": "648408ba-c2c0-4300-bcf1-94a87ecf8655",
+					"uid": "0-648408ba-c2c0-4300-bcf1-94a87ecf8655",
+					"name": "Search Consumer by ID with Privacy token",
+					"url": "http://localhost:8000/consumer?id=2",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "token",
+							"value": "{{privacyToken}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "id",
+							"value": "2",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": "165a06b2-80da-4217-9990-85bfdaa02cb2",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"headers": "token: {{privacyToken}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "75eb2f70-62fe-4ea0-995c-e6a779ecd08d",
+					"uid": "0-75eb2f70-62fe-4ea0-995c-e6a779ecd08d",
+					"name": "Login with Finance Role",
+					"url": "http://localhost:8000/login",
+					"description": "",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fc4035c9-6915-4cb1-a3d6-c78d66b8b011",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"financeToken\", jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "3dc63c51-463a-48b7-a755-4686e9067a63",
+					"responses_order": [],
+					"preRequestScript": null,
+					"tests": "var jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"financeToken\", jsonData.token)",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"rawModeData": "{\n    \"username\": \"payment\",\n    \"password\": \"payment123\"\n}",
+					"pathVariables": {}
+				},
+				{
+					"id": "7e8a068d-9125-4dd8-8eff-9ed54733e53c",
+					"uid": "0-7e8a068d-9125-4dd8-8eff-9ed54733e53c",
+					"name": "Search Consumer by Username with Privacy token",
+					"url": "http://localhost:8000/consumer?username=Ethelyn.Schinner",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "token",
+							"value": "{{privacyToken}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "username",
+							"value": "Ethelyn.Schinner",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": "165a06b2-80da-4217-9990-85bfdaa02cb2",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"headers": "token: {{privacyToken}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "8d56ccbf-b780-4159-9ea7-295b3f53a884",
+					"uid": "0-8d56ccbf-b780-4159-9ea7-295b3f53a884",
+					"name": "Search Consumer by ID with FInance token",
+					"url": "http://localhost:8000/consumer?id=2",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "token",
+							"value": "{{financeToken}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "id",
+							"value": "2",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": "3dc63c51-463a-48b7-a755-4686e9067a63",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"headers": "token: {{financeToken}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "b10e389d-515c-405a-823f-3d2d3ec49299",
+					"uid": "0-b10e389d-515c-405a-823f-3d2d3ec49299",
+					"name": "Search Consumer by Username with Admin token",
+					"url": "http://localhost:8000/consumer?username=Ethelyn.Schinner",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "token",
+							"value": "{{adminToken}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "username",
+							"value": "Ethelyn.Schinner",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": "a4a3549c-7301-448b-bc4c-40f330da409c",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"headers": "token: {{adminToken}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "be382797-b521-4770-855e-1eef3b1ac79c",
+					"uid": "0-be382797-b521-4770-855e-1eef3b1ac79c",
+					"name": "Search Consumer by ID with Common token",
+					"url": "http://localhost:8000/consumer?id=2",
+					"description": "",
+					"data": null,
+					"dataOptions": null,
+					"dataMode": null,
+					"headerData": [
+						{
+							"key": "token",
+							"value": "{{commonToken}}",
+							"description": "",
+							"type": "default",
+							"enabled": true
+						}
+					],
+					"method": "GET",
+					"pathVariableData": [],
+					"queryParams": [
+						{
+							"key": "id",
+							"value": "2",
+							"equals": true,
+							"description": "",
+							"enabled": true
+						}
+					],
+					"auth": null,
+					"events": null,
+					"folder": "e4a1491a-902c-4002-83f0-4436ff042082",
+					"responses_order": [],
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"headers": "token: {{commonToken}}\n",
+					"pathVariables": {}
+				},
+				{
+					"id": "ceca119c-2e04-4927-bb08-cae171b50ff7",
+					"uid": "0-ceca119c-2e04-4927-bb08-cae171b50ff7",
+					"name": "Login with Common Role",
+					"url": "http://localhost:8000/login",
+					"description": "",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "59880adf-c346-40ca-b907-d78858b100ec",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"commonToken\", jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "e4a1491a-902c-4002-83f0-4436ff042082",
+					"responses_order": [],
+					"preRequestScript": null,
+					"tests": "var jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"commonToken\", jsonData.token)",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"rawModeData": "{\n    \"username\": \"user\",\n    \"password\": \"user123\"\n}",
+					"pathVariables": {}
+				},
+				{
+					"id": "e62f52fd-6114-483d-9433-547cb4d1b353",
+					"uid": "0-e62f52fd-6114-483d-9433-547cb4d1b353",
+					"name": "Login with Privacy Role",
+					"url": "http://localhost:8000/login",
+					"description": "",
+					"data": [],
+					"dataOptions": null,
+					"dataMode": "raw",
+					"headerData": null,
+					"method": "POST",
+					"pathVariableData": [],
+					"queryParams": [],
+					"auth": null,
+					"events": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2196e4f0-45a3-41f9-8bef-383f3fd4504b",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"privacyToken\", jsonData.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"folder": "165a06b2-80da-4217-9990-85bfdaa02cb2",
+					"responses_order": [],
+					"preRequestScript": null,
+					"tests": "var jsonData = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"privacyToken\", jsonData.token)",
+					"currentHelper": null,
+					"helperAttributes": null,
+					"collectionId": "488fb9b4-f79e-4a85-8e00-6840add75376",
+					"rawModeData": "{\n    \"username\": \"dpo\",\n    \"password\": \"dpo123\"\n}",
+					"pathVariables": {}
+				}
+			]
+		}
+	],
+	"environments": [
+		{
+			"id": "fa24af90-17cc-4468-bdb0-edf8a9a14011",
+			"name": "Py Share Data",
+			"values": [
+				{
+					"key": "adminToken",
+					"value": "",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "privacyToken",
+					"value": "",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "financeToken",
+					"value": "",
+					"type": "default",
+					"enabled": true
+				},
+				{
+					"key": "commonToken",
+					"value": "",
+					"type": "default",
+					"enabled": true
+				}
+			]
+		},
+		{
+			"id": "0b7c1555-fd49-4b4c-aaee-b0d6087eb70a",
+			"name": "My Workspace - globals",
+			"values": []
+		}
+	],
+	"headerPresets": [],
+	"globals": []
+}

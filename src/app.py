@@ -1,5 +1,5 @@
 ''' Main program '''
-
+import json
 from flask import Flask, request, Response, json
 import db
 import auth
@@ -18,7 +18,8 @@ def init():
 def default():
     ''' Healthcheck '''
     print('Healthcheck request made')
-    return Response("{'Message':'It works!'}", status=200, mimetype='application/json')
+    data_response = {"Message" :"It works!"}
+    return Response(json.dumps(data_response), status=200, mimetype='application/json')
 
 @app.route('/login', methods = ['POST'])
 def login():
@@ -32,16 +33,22 @@ def login():
             if password is not None:
                 result = auth.login(username, password)
                 if result in (403, 404):
-                    return Response("{'Error':'Invalid username or password'}", status=403, mimetype='application/json')
+                    data_response = {'Error':'Invalid username or password'}
+                    return Response(json.dumps(data_response), status=403, mimetype='application/json')
                 elif result == 503:
-                    return Response("{'Error':'Server error while generating the token'}", status=503, mimetype='application/json')
-                return Response("{'token':'" + result + "'}", status=200, mimetype='application/json')
+                    data_response = {'Error':'Server error while generating the token'}
+                    return Response(json.dumps(data_response), status=503, mimetype='application/json')
+                data_response = { "token" : result }
+                return Response(json.dumps(data_response), status=200, mimetype='application/json')
             else:
-                return Response("{'Error':'Missing password parameter'}", status=422, mimetype='application/json')
+                data_response = {'Error' : 'Missing password parameter'}
+                return Response(json.dumps(data_response), status=422, mimetype='application/json')
         else:
-            return Response("{'Error':'Missing username parameter'}", status=422, mimetype='application/json')
+            data_response = {'Error':'Missing username parameter'}
+            return Response(json.dumps(data_response), status=422, mimetype='application/json')
     except:
-        return Response("{'Error':'Message in invalid format'}", status=400, mimetype='application/json')
+        data_response = {'Error':'Message in invalid format'}
+        return Response(json.dumps(data_response), status=400, mimetype='application/json')
 
 @app.route('/consumer', methods = ['GET'])
 def search():
@@ -50,7 +57,8 @@ def search():
     role = auth.get_role_from_token(token)
 
     if role == 403:
-        return Response("{'Error':'Invalid authentication token'}", status=403, mimetype='application/json')
+        data_response = {'Error':'Invalid authentication token'}
+        return Response(json.dumps(data_response), status=403, mimetype='application/json')
 
     consumer_id = request.args.get('id')
     consumer_username = request.args.get('username')
@@ -62,11 +70,14 @@ def search():
         consumer = get_consumer_from_db("username", consumer_username, role)
 
     if consumer == 404:
-        return Response("{'Error':'Consumer not found'}", status=404, mimetype='application/json')
+        data_response = {'Error':'Consumer not found'}
+        return Response(json.dumps(data_response), status=404, mimetype='application/json')
     elif consumer == 422:
-        return Response("{'Error':'The server had a problem processing the request'}", status=422, mimetype='application/json')
+        data_response = {'Error':'The server had a problem processing the request'}
+        return Response(json.dumps(data_response), status=422, mimetype='application/json')
     elif consumer is None:
-        return Response("{'Error':'Missing id or username arguments (lowercase only)'}", status=422, mimetype='application/json')
+        data_response = {'Error':'Missing id or username arguments (lowercase only)'}
+        return Response(json.dumps(data_response), status=422, mimetype='application/json')
     else:
         return Response(consumer, status=200, mimetype='application/json')
 

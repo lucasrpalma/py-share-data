@@ -1,7 +1,6 @@
 ''' Module to get the external content and store in the DB '''
 import requests
 from consumer import Consumer
-from libs import utils
 import db
 
 def get_external_data():
